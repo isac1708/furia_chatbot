@@ -18,7 +18,7 @@ app.post('/furiachat', async (req, res) => {
         messages: [
           {
             role: 'system',
-            content: 'Você é um especialista em CS:GO e no time FURIA. Responda com entusiasmo e conhecimento.'
+            content: 'Você é um especialista em CS,PUGB,LOL e R6 e no time FURIA. Responda com entusiasmo e conhecimento.'
           },
           {
             role: 'user',

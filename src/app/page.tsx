@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { FuriaIcon, AvatarHappy } from "../assets/icons";
+import { FuriaIcon, AvatarHappy } from "../../public/assets/icons";
 
 import { useState } from "react"; 
 
@@ -53,32 +53,35 @@ const handleSendMessage = async () => {
       className="flex min-h-screen bg-black items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/Furia_background.png')" }}>
       <Card className="w-[570px] h-[635px] grid grid-rows-[min-content_1fr_min-content]">
-        <CardHeader>
-          <CardTitle className="text-2xl">FurIA ChatBot</CardTitle>
-          <CardDescription>
-            Tire suas dúvidas sobre produtos e da maior equipe de CS do Brasil!
-          </CardDescription>
-        </CardHeader>
+      <CardHeader>
+  <div className="flex items-center gap-3">
+    <Image src="/furIA_icon.svg" alt="FurIA Logo" width={40} height={40} />
+    <div className="flex flex-col">
+      
+    </div>
+  </div>
+</CardHeader>
         <CardContent className="space-y-4 overflow-y-auto">
        
         {messages.map((msg, index) => (
   <div key={index} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
     <div className={`flex gap-2 text-sm px-3 py-2 rounded-xl max-w-[70%] ${
-      msg.role === "user" ? "bg-green-600 text-slate-200" : "bg-zinc-800 text-slate-100"
+      msg.role === "user"
+      ? "bg-green-600 text-slate-200"
+      : "bg-[#2C2C2C] text-slate-100"
     }`}>
       {msg.role === "bot" && (
         <Avatar className="w-6 h-6">
           <AvatarFallback />
-          <Image src={FuriaIcon} alt="Furia Icon" width={24} height={24} />
+         <AvatarImage src="/assets/icons/furia-seeklogo.svg" alt="Avatar feliz" />
         </Avatar>
       )}
       <p>{msg.content}</p>
       {msg.role === "user" && (
+
         <Avatar className="w-6 h-6">
           <AvatarFallback>Is</AvatarFallback>
-          <AvatarImage asChild>
-           <Image src={AvatarHappy} alt="Furia Icon" width={24} height={24}/>
-            </AvatarImage>
+           <AvatarImage src="/assets/icons/avatar-happy.svg" alt="Avatar feliz" />
         </Avatar>
       )}
     </div>
