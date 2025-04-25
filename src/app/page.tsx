@@ -3,15 +3,13 @@ import Image from "next/image";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { FuriaIcon, AvatarHappy } from "../../public/assets/icons";
+
 
 import { useState } from "react"; 
 
@@ -27,7 +25,7 @@ const handleSendMessage = async () => {
   if (!userInput.trim()) return;
 
   try {
-    const response = await fetch("http://localhost:3001/furiachat", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/furiachat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
