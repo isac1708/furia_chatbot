@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Navbar from "@/components/Navbar"; 
 import {
   Card,
   CardContent,
@@ -47,9 +48,8 @@ const handleSendMessage = async () => {
   }
 };
   return (
-    <div
-      className="flex min-h-screen bg-black items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/Furia_background.png')" }}>
+    <div className="flex flex-col min-h-screen bg-black bg-cover bg-center" style={{ backgroundImage: "url('/Furia_background.png')" }}>
+      <div className="flex flex-1 items-center justify-center w-full">
       <Card className="w-[570px] h-[635px] grid grid-rows-[min-content_1fr_min-content]">
       <CardHeader>
   <div className="flex items-center gap-3">
@@ -96,6 +96,7 @@ const handleSendMessage = async () => {
           <Button type="button" onClick={handleSendMessage}>Enviar</Button>
         </CardFooter>
       </Card>
+      </div>
     </div>
   );
 }
