@@ -11,7 +11,7 @@ export default function Navbar() {
       <Link href="/proximos-jogos" className="text-zinc-300 hover:text-white transition">
         Próximos Jogos
       </Link>
-      <Link href="/jogadores" className="text-zinc-300 hover:text-white transition">
+      <Link href="/gamers" className="text-zinc-300 hover:text-white transition">
         Jogadores
       </Link>
       <Link
